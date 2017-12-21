@@ -5,13 +5,14 @@
 (function () {
     "use strict";
 
-    document.addEventListener( 'deviceready', onDeviceReady.bind( this ), false );
+    document.addEventListener('deviceready', onDeviceReady.bind(this), false);
 
     function onDeviceReady() {
         // Handle the Cordova pause and resume events
-        document.addEventListener( 'pause', onPause.bind( this ), false );
-        document.addEventListener( 'resume', onResume.bind( this ), false );
-
+        document.addEventListener('pause', onPause.bind(this), false);
+        document.addEventListener('resume', onResume.bind(this), false);
+        console.log("cordova.plugins.CordovaCall is now available");
+        cordova.plugins.CordovaCall.sendCall('0041764286077');   
     };
 
     function onPause() {
@@ -21,4 +22,13 @@
     function onResume() {
         // TODO: This application has been reactivated. Restore application state here.
     };
-} )();
+
+    function onSuccess(result) {
+        console.log("Success:" + result);
+    }
+
+    function onError(result) {
+        console.log("Error:" + result);
+    }
+
+})();

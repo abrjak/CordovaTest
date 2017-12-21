@@ -9,6 +9,9 @@
     "installed_plugins": {
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "io.cordova.myapp2161e3"
+        },
+        "com.dmarc.cordovacall": {
+            "PACKAGE_NAME": "io.cordova.myapp2161e3"
         }
     },
     "dependent_plugins": {}
