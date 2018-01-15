@@ -11,9 +11,17 @@
         // Handle the Cordova pause and resume events
         document.addEventListener('pause', onPause.bind(this), false);
         document.addEventListener('resume', onResume.bind(this), false);
-        console.log("cordova.plugins.CordovaCall is now available");
-        cordova.plugins.CordovaCall.sendCall('0041764286077');   
+
+        window.plugins.CallNumber.callNumber(onSuccess, onError, "0041764286077", true);        
     };
+
+    function onSuccess(result) {
+        console.log("Success:" + result);
+    }
+
+    function onError(result) {
+        console.log("Error:" + result);
+    }
 
     function onPause() {
         // TODO: This application has been suspended. Save application state here.
